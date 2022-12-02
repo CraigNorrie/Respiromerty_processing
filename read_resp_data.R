@@ -2,7 +2,7 @@
 #Last modified: November 2022
 #This code will read in data from a respirometery files that wwere produced using the JPG lab presense respirometer
 #one file containeing each probe for each run should exist and a master file with the infor for each animal shoould also exist
-#Templates for thee master filwe is in the repo
+#Templates for thee master filwe is in the repo.
 
 
 # Load packages ------------------------------------------------------------
