@@ -3,7 +3,7 @@
 #This code will read in data from a respirometery files that wwere produced using the JPG lab presense respirometer
 #one file containeing each probe for each run should exist and a master log file with the info for each animal should exist
 #Templates for the log file is in the repo names "Resplog_Template_CSV.csv"
-
+#the respirometry data files should be named in order. i.e. the first file should correspond to run #1
 
 # Load packages ------------------------------------------------------------
 library(tidyverse)
@@ -11,8 +11,8 @@ library(gridExtra)
 library(lubridate)
 library(respR)
 # Define working directories ----------------------------------------------
-project_wd <- "C:/Users/Craig Norrie/OneDrive - UW/Lab study 2022/Temperarture/Respirometry data/First round of respirometry analysis"
-data_wd_temperature <- "C:/Users/Craig Norrie/OneDrive - UW/Lab study 2022/Temperarture/Data/Respirometry data/Raw data"
+project_wd <- "C:/Users/Craig Norrie/OneDrive - UW/Lab study 2022/Temperarture/Respirometry data/First round of respirometry analysis"#the loaction of the project working directory
+data_wd_temperature <- "C:/Users/Craig Norrie/OneDrive - UW/Lab study 2022/Temperarture/Data/Respirometry data/Raw data"#the location that the data is stored. Can be the same as proj folder
 expt <- "temperature"
 # Read in all the data ----------------------------------------------------
 ##This code will create a numbered DF corresponsing to the order of the runs. 
@@ -60,6 +60,7 @@ inspect(run_num, time = 1, oxygen = 2:9)#*Assumes 8 probe respirometer****
 #Set the start and end times over the period of o2 consumption based on inspection of data
 start_time <- 30
 end_time <- 70
+
 ######YOU ShOULD NOT HAVE TO CHANGE ANY OF THE BELOW CODE FOR EACH RUN
 
 #Calculate oxygen uptake levels for each probe over the specified period
