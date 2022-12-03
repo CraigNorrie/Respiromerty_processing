@@ -1,8 +1,8 @@
 ##Author Craig Norrie - cnorrie@uw.edu
 #Last modified: November 2022
 #This code will read in data from a respirometery files that wwere produced using the JPG lab presense respirometer
-#one file containeing each probe for each run should exist and a master file with the infor for each animal shoould also exist
-#Templates for thee master filwe is in the repo.
+#one file containeing each probe for each run should exist and a master log file with the info for each animal should exist
+#Templates for the log file is in the repo names "Resplog_Template_CSV.csv"
 
 
 # Load packages ------------------------------------------------------------
