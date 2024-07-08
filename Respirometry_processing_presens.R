@@ -87,6 +87,15 @@ allratesdat$probe <- as.factor(allratesdat$probe)
 animalratedat <- merge(allratesdat, resplog, by = c("probe","run"))
 animalratedat$Ploidy <- as.factor(animalratedat$Ploidy)
 animalratedat$Treatment <- as.factor(animalratedat$Treatment)
+###############Code below here may need to be checked. This is to show how to background correct.
+
+Merge the data to one df
+animalratedat <- merge(allratesdat, resplog, by = c("probe","run"))
+animalratedat <- animalratedat %>% select(Tank, Colour, Treatment, rate, Oyster.tissue.dry.mass)
+#Correct for blanks
+blanks <- animalratedat %>% filter(Colour == "Blank") %>% group_by(Tank) %>% summarise(meanbgrd = mean(rate)) %>% select(Tank, meanbgrd)
+animalratedat <- merge(animalratedat, blanks, by = "Tank")
+animalratedat$bgrdcorrectedrate <- animalratedat$rate - animalratedat$meanbgrd
 
 
 
